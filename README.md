@@ -163,4 +163,66 @@ PORT_EXPOSE=8009
 API_USERNAME=
 API_PASSWORD=
 
+## Request Schema
+
+### ScheduleRequest
+```json
+{
+  "schedule_time": "2024-01-20T08:00:00",  
+  "callback_url": "http://localhost:8008/callback/test",
+  "payload": {
+    "key": "value"
+  },
+  "timezone": "GMT+7"  // Opsional, default: "UTC"
+}
+```
+
+### ScheduleUpdate
+```json
+{
+  "schedule_time": "2024-01-20T08:00:00",  // Opsional
+  "callback_url": "string",                 // Opsional
+  "payload": {                              // Opsional
+    "key": "value"
+  },
+  "timezone": "string"                      // Opsional
+}
+```
+
+### IntervalScheduleRequest
+```json
+{
+  "weeks": 0,                               // Opsional
+  "days": 0,                                // Opsional
+  "hours": 0,                               // Opsional
+  "minutes": 0,                             // Opsional
+  "seconds": 0,                             // Opsional
+  "start_date": "2024-01-20T08:00:00",     // Opsional
+  "end_date": "2024-01-20T08:00:00",       // Opsional
+  "timezone": "GMT+7",                      // Opsional, default: "UTC"
+  "callback_url": "string",
+  "payload": {
+    "key": "value"
+  },
+  "jitter": 0                              // Opsional
+}
+```
+
+### IntervalScheduleUpdate
+```json
+{
+  "weeks": 0,                               // Opsional
+  "days": 0,                                // Opsional
+  "hours": 0,                               // Opsional
+  "minutes": 0,                             // Opsional
+  "seconds": 0,                             // Opsional
+  "start_date": "2024-01-20T08:00:00",     // Opsional
+  "end_date": "2024-01-20T08:00:00",       // Opsional
+  "timezone": "string",                     // Opsional
+  "callback_url": "string",                 // Opsional
+  "payload": {                              // Opsional
+    "key": "value"
+  },
+  "jitter": 0                              // Opsional
+}
 ```
