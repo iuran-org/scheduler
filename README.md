@@ -1,23 +1,25 @@
 # Scheduler
 
-## fitur
+## Fitur
  - API Create, Read, Update, Delete Job
  - Timezone Support, Otomatis Konversi waktu ke timezone yang diinginkan
  - Presist Job (Postgre)
  - Async Job Eksekusi
  - Async Circuit Breaker
  - Health Check
- - Circuit Breaker
  - Testing Endpoint  (Dev Purposes)
 
-## Install
+## Install & Run Locally
+
+
+```bash
+git clone https://github.com/iuran-org/scheduler
+cd scheduler
+```
 
 ```bash
 pip install -r requirements.txt
 ```
-
-## Run
-
 ```bash
 uvicorn main:app --reload --port 8008 --host 0.0.0.0 --workers 4
 ```
@@ -141,15 +143,6 @@ breaker = CircuitBreaker(
     exclude=[ValueError]  # Error yang tidak dihitung sebagai kegagalan
 )
 ```
-
-### Penggunaan:
-```python
-@breaker
-def call_external_service():
-    # Kode untuk memanggil service eksternal
-    pass
-```
-
 
 ### ENV
 
