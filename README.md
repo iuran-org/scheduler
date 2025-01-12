@@ -16,6 +16,9 @@
 git clone https://github.com/iuran-org/scheduler
 cd scheduler
 ```
+```
+venv activate
+```
 
 ```bash
 pip install -r requirements.txt
@@ -24,7 +27,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload --port 8008 --host 0.0.0.0 --workers 4
 ```
 
-## Docker
+## Docker Install
 ```bash
 docker compose up --build -d 
 ```
@@ -47,7 +50,7 @@ http://localhost:8008/jobs/interval
 {
   "days": 1,
   "start_date": "2024-01-20T08:00:00",
-  "callback_url": "http://example.com/daily",
+  "callback_url": "http://localhost:8008/callback/test",
   "payload": {
     "type": "daily_job",
     "time": "08:00"
@@ -62,7 +65,7 @@ http://localhost:8008/jobs/interval
 {
   "weeks": 1,
   "start_date": "2024-01-22T09:00:00",  // Pastikan ini hari Senin
-  "callback_url": "http://example.com/weekly",
+  "callback_url": "http://localhost:8008/callback/test",
   "payload": {
     "type": "weekly_job",
     "day": "Monday"
@@ -76,7 +79,7 @@ http://localhost:8008/jobs/interval
 {
   "days": 365,  // atau 366 untuk tahun kabisat
   "start_date": "2024-01-01T00:00:00",
-  "callback_url": "http://example.com/yearly",
+  "callback_url": "http://localhost:8008/callback/test",
   "payload": {
     "type": "yearly_job",
     "event": "new_year"
@@ -91,7 +94,7 @@ Setiap 2 jam:
 ```
 {
   "hours": 2,
-  "callback_url": "http://example.com/every-2-hours",
+  "callback_url": "http://localhost:8008/callback/test",
   "payload": {
     "type": "hourly_job"
   },
@@ -103,7 +106,7 @@ Setiap 30 menit:
 ```
 {
   "minutes": 30,
-  "callback_url": "http://example.com/every-30-min",
+  "callback_url": "http://localhost:8008/callback/test",
   "payload": {
     "type": "frequent_job"
   },
@@ -115,7 +118,7 @@ Setiap 2 minggu pada hari Jumat jam 3 sore:
 ```
 {
   "minutes": 30,
-  "callback_url": "http://example.com/every-30-min",
+  "callback_url": "http://localhost:8008/callback/test",
   "payload": {
     "type": "frequent_job"
   },
