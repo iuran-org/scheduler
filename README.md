@@ -1,15 +1,30 @@
-# sample rabbitmq with python
+# Scheduler
 
-## install
+## fitur
+ - API Create, Read, Update, Delete Job
+ - Timezone Support, Otomatis Konversi waktu ke timezone yang diinginkan
+ - Presist Job (Postgre)
+ - Async Job Eksekusi
+ - Async Circuit Breaker
+ - Health Check
+ - Circuit Breaker
+ - Testing Endpoint  (Dev Purposes)
+
+## Install
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## run
+## Run
 
 ```bash
 uvicorn main:app --reload --port 8008 --host 0.0.0.0 --workers 4
+```
+
+## Docker
+```bash
+docker compose up --build -d 
 ```
 
 ## API Docs
